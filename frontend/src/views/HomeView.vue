@@ -1,44 +1,40 @@
 <template>
     <v-container>
-      <v-row justify="center">
-        <v-col cols="12" xs="12">
-          <v-carousel>
-            <v-carousel-item v-for="ad in ads"
-            :key="ad.id"
-            :src="ad.src" cover>
-      <div class="ad-link">
-        <v-btn class="error" :to="'/ad/' + ad.id">
-            {{ ad.title }}
-        </v-btn>
-    </div>
-    </v-carousel-item>
-          </v-carousel>
-        </v-col>
-      </v-row>
+        <v-row justify="center">
+            <v-col cols="12" xs="12">
+                <v-carousel>
+                    <v-carousel-item v-for="ad in ads" :key="ad.id" :src="ad.src" cover>
+                        <div class="ad-link">
+                            <v-btn class="error" :to="'/ad/' + ad.id">
+                                {{ ad.title }}
+                            </v-btn>
+                        </div>
+                    </v-carousel-item>
+                </v-carousel>
+            </v-col>
+        </v-row>
     </v-container>
     <v-container grid-list-lg>
-      <v-row justify="center">
-        <v-col cols="12" sm="6" md="4" xs="12" v-for="ad in ads" :key="ad.id">
-          <v-card>
-            <v-img :src="ad.src" height="200px"></v-img>
-            <v-card-title primary-title>
-              <div>
-                <h3 class="headline mb0">{{ ad.title }}</h3>
-                <div>{{ ad.desc }}</div>
-              </div>
-            </v-card-title>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn text :to="'/ad/' + ad.id">Open</v-btn>
-              <v-btn raised color="primary">
-                Buy
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
+        <v-row justify="center">
+            <v-col cols="12" sm="6" md="4" xs="12" v-for="ad in ads" :key="ad.id">
+                <v-card>
+                    <v-img :src="ad.src" height="200px"></v-img>
+                    <v-card-title primary-title>
+                        <div>
+                            <h3 class="headline mb0">{{ ad.title }}</h3>
+                            <div>{{ ad.desc }}</div>
+                        </div>
+                    </v-card-title>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn text :to="'/ad/' + ad.id">Open</v-btn>
+                        <v-btn raised color="primary">Buy</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-col>
+        </v-row>
     </v-container>
-  </template>
+</template>
 
 <script>
 	export default {
@@ -68,36 +64,11 @@
 		    	    	id:"3"
 		    	    },
 		    	    {
-                        ads: [
-		                	{
-		                		title:"First",
-		                		desc:"First Desc",
-		                		promo: true,
-		                		src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
-		                		id:"1"
-		                	},
-		                	{
-		                		title:"Second",
-		                		desc:"Second Desc",
-		                		promo: true,
-		                		src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
-		                		id:"2"
-		                	},
-		                	{
-		                		title:"Third",
-		                		desc:"Thitd Desc",
-		                		promo: true,
-		                		src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
-		                		id:"3"
-		                	},
-		                	{
-		                		title:"Fouth",
-		                		desc:"Fouth Desc",
-		                		promo: true,
-		                		src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-		                		id:"4"
-		                	}
-		                ]
+                        title:"Fouth",
+		                desc:"Fouth Desc",
+		                promo: true,
+		                src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+		                id:"4"
 	                }
                 ]
 	        } 
