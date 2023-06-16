@@ -21,7 +21,7 @@ export default {
         setError({commit}, payload) {
             commit('setError', payload);
         },
-        clearError(state) {
+        clearError({commit}) {
             commit('clearError');
         }
     },
