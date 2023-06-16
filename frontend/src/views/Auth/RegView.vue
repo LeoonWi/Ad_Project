@@ -18,7 +18,7 @@
                             name="confirm-password"
                             label="Confirm Password"
                             type="password"
-                            v-model="confirmPassword"
+                            v-model="password"
                             :rules="confirmPasswordRules"></v-text-field>
                         </v-form>
                     </v-card-text>
@@ -39,7 +39,6 @@
             return {
                 email: '',
                 password: '',
-                confirmPassword: '',
                 valid: false,
                 emailRules: [
                     v => !!v || 'E-mail is required',
@@ -58,6 +57,7 @@
                         email: this.email,
                         password: this.password
                     };
+                    this.$store.dispatch('registerUser', user);
                     console.log(user);
                 }
             }

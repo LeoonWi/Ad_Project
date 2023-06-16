@@ -17,8 +17,8 @@ export default {
         }
     },
     actions: {
-        registerUser({commit}, {email, pass}) {
-            commit('setUser', new User(1, email, pass));
+        registerUser({commit}, {email, password}) {
+            commit('setUser', new User(1, email, password));
         }
     },
     getters: {
