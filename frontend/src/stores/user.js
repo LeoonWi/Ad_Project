@@ -21,7 +21,7 @@ export default {
             commit('clearError');
             commit('setLoading', true);
             //  Запрос на сервер
-            let isRequestOk = true;
+            let isRequestOk = true; // в методичке стоит false
             let promise = new Promise(function(resolve) {
                 setTimeout(() => resolve('Done'), 3000);
             });
