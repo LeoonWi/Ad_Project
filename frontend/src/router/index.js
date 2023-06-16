@@ -16,6 +16,7 @@ const routes = [
   {
     path: '/ad/:id',
     name: 'AdView',
+    props: true,
     component: AdView
   },
   {
