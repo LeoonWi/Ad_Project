@@ -9,8 +9,7 @@
             label="Ad Title"
             type="text"
             v-model="title"
-            :rules="[(v) => !!v || 'Title is required']"
-          >
+            :rules="[(v) => !!v || 'Title is required']">
           </v-text-field>
           <v-textarea
             name="description"
@@ -18,8 +17,8 @@
             type="text"
             v-model="description"
             :rules="[(v) => !!v || 'Description is required']"
-            class="mb-3"
-          ></v-textarea>
+            class="mb-3">
+          </v-textarea>
         </v-form>
         <v-layout row>
           <!-- первый блок -->
@@ -79,10 +78,11 @@ export default {
           title: this.title,
           desc: this.description,
           promo: this.promo,
+          src: "https://cdn.vuetifyjs.com/images/cards/cooking.png"
         };
         console.log(ad);
       }
     },
-  },
+  }
 };
 </script>
