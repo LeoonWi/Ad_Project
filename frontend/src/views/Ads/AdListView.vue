@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card v-for="ad in myAds" :key="ad.id" class="mb-3" max-width="1000">
+    <v-card v-for="ad in ads" :key="ad.id" class="mb-3" max-width="1000">
       <v-row>
         <v-col xs="4">
           <v-img :src="ad.src" height="200px" cover></v-img>
@@ -22,7 +22,7 @@
   export default {
     name: 'AdView',
     computed: {
-      myAds() {
+      ads() {
         return this.$store.getters.myAds;
       }
     }
