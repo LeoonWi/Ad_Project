@@ -6,6 +6,7 @@ import NewAdView from '@/views/Ads/NewAdView.vue'
 import LoginView from '@/views/Auth/LoginView.vue'
 import RegView from '@/views/Auth/RegView.vue'
 import OrdersView from '@/views/User/OrdersView.vue'
+import AuthGuard from './auth-guard'
 
 const routes = [
   {
@@ -22,12 +23,14 @@ const routes = [
   {
     path: '/list',
     name: 'AdListView',
-    component: AdListView
+    component: AdListView,
+    beforeEnter: AuthGuard
   },
   {
     path: '/new',
     name: 'NewAdView',
-    component: NewAdView
+    component: NewAdView,
+    beforeEnter: AuthGuard
   },
   {
     path: '/login',
@@ -42,7 +45,8 @@ const routes = [
   {
     path: '/orders',
     name: 'OrderView',
-    component: OrdersView
+    component: OrdersView,
+    beforeEnter: AuthGuard
   }
 ]
 
