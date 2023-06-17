@@ -18,8 +18,7 @@ const routes = [
     path: '/ad/:id',
     name: 'AdView',
     props: true,
-    component: AdView,
-    beforeEnter: AuthGuard
+    component: AdView
   },
   {
     path: '/list',
