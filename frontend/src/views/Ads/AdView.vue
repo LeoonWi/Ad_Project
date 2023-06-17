@@ -14,7 +14,7 @@
           </v-card-text>
           <v-card-actions
             ><v-spacer></v-spacer>
-            <v-btn text class="warning">Edit</v-btn>
+            <modal-dialog></modal-dialog>
             <v-btn class="success">Buy</v-btn>
           </v-card-actions>
         </v-card>
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import EditAdModal from './EditAdModal.vue';
+
 export default {
   name: 'AdView',
   props: ['id'],
@@ -37,6 +39,9 @@ export default {
       const id = this.id;
       return this.$store.getters.adById(id);
     }
+  },
+  components: {
+    'modal-dialog': EditAdModal
   }
 };
 </script>
