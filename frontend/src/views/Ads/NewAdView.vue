@@ -52,7 +52,7 @@
           <!-- четвертый блок -->
           <v-flex xs12>
             <v-spacer></v-spacer>
-            <v-btn color="success" @click="createAd">Create Ad</v-btn>
+            <v-btn color="success" :loading="loading" @click="createAd" :disabled="!valid || loading">Create Ad</v-btn>
           </v-flex>
         </v-layout>
       </v-flex>
@@ -70,6 +70,11 @@ export default {
       description: "",
       promo: false,
     };
+  },
+  computed: {
+    loading() {
+      return this.$store.getters.loading
+    }
   },
   methods: {
     createAd() {
