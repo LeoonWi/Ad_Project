@@ -37,8 +37,8 @@
                 <v-col cols="12">
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn>Cancel</v-btn>
-                        <v-btn color="success">Save</v-btn>
+                        <v-btn @click="onCalcel">Cancel</v-btn>
+                        <v-btn @click="onSave" color="success">Save</v-btn>
                     </v-card-actions>
                 </v-col>
             </v-row>
@@ -49,9 +49,29 @@
 <script>
 export default {
     name: 'EditAdModal',
+    props: ['ad'],
     data() {
         return {
             modal: false,
+            editedTitle: this.ad.title,
+            editedDesc: this.ad.desc
+        }
+    },
+    methods: {
+        onCalcel() {
+            this.editedTitle = this.ad.title;
+            this.editedDesc = this.ad.desc;
+            this.modal = false;
+        },
+        onSave() {
+            if (this.editedTitle !== '' && this.editedDesc !== '') {
+                this.$store.dispatch('updateAd', {
+                    title: this.editedTitle,
+                    desc: this.editedDesc,
+                    id: this.ad.id
+                });
+                this.modal = false;
+            }
         }
     }
 }
