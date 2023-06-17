@@ -64,7 +64,7 @@
                 return this.$store.getters.error;
             },
             isUserLoggedIn() {
-                return this.$store.isUserLoggedIn;
+                return this.$store.getters.isUserLoggedIn;
             },
             links() {
                 if (this.isUserLoggedIn) {
