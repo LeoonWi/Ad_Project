@@ -14,7 +14,7 @@
           </v-card-text>
           <v-card-actions
             ><v-spacer></v-spacer>
-            <modal-dialog :ad="ad"></modal-dialog>
+            <modal-dialog :ad="ad" v-if="isOwner"></modal-dialog>
             <v-btn class="success">Buy</v-btn>
           </v-card-actions>
         </v-card>
@@ -38,6 +38,12 @@ export default {
     ad() {
       const id = this.id;
       return this.$store.getters.adById(id);
+    },
+    isOwner() {
+      if (this.$store.getters.user !== null) { // Без условия крашит сайт, если пользователь не авторизован
+        return this.ad.userId === this.$store.getters.user.id;
+      }
+      
     }
   },
   components: {
