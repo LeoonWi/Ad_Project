@@ -43,7 +43,6 @@ export default {
       if (this.$store.getters.user !== null) { // Без условия крашит сайт, если пользователь не авторизован
         return this.ad.userId === this.$store.getters.user.id;
       }
-      
     }
   },
   components: {
