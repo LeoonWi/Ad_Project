@@ -28,7 +28,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn text :to="'/ad/' + ad.id">Open</v-btn>
-                        <v-btn raised color="primary">Buy</v-btn>
+                        <buy-ad-modal :ad="ad"></buy-ad-modal>
                     </v-card-actions>
                 </v-card>
             </v-col>
@@ -37,17 +37,17 @@
 </template>
 
 <script>
-	export default {
-	    name: 'HomeView',
-	    computed: {
-            promoAds() {
-                return this.$store.getters.promoAds;
-            },
-            ads() {
-                return this.$store.getters.ads;
-            }
+export default {
+    name: 'HomeView',
+    computed: {
+        promoAds() {
+            return this.$store.getters.promoAds;
+        },
+        ads() {
+            return this.$store.getters.ads;
         }
     }
+}
 </script>
 
 <style scoped>
